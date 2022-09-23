@@ -10,7 +10,7 @@ export const AppContainer = styled.div`
 
 export const MainContainer = styled.main`
   width: 80%;
-  height: max-content;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

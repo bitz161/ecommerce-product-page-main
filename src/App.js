@@ -1,15 +1,19 @@
 import { AppContainer, MainContainer } from "./App.styles.jsx";
 import HeaderPage from "./components/header/header.component";
 import MainContent from "./components/mainContent/main-content.component.jsx";
+import ModalComponent from "./components/modal/modal.component.jsx";
+import { useContext } from "react";
+import { PhotosContext } from "./context/photos.context.jsx";
 
 function App() {
-  // const { screenSize } = useContext(ScreenContext);
+  const { enableModal } = useContext(PhotosContext);
   return (
     <AppContainer>
       <MainContainer>
         <HeaderPage />
         <MainContent />
       </MainContainer>
+      {enableModal && <ModalComponent />}
     </AppContainer>
   );
 }

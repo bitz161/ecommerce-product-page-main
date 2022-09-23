@@ -15,7 +15,7 @@ export const HeaderContainer = styled.header`
       width: 90%;
       align-items: flex-start;
       padding-top: 20px;
-      height: ${({ activeMenu }) => (activeMenu ? "18rem" : "5rem")};
+      height: ${({ activeMenu }) => (activeMenu ? "30rem" : "5rem")};
       transition: height 1s;
     }
   }
@@ -29,6 +29,7 @@ export const NavlinksContainer = styled.nav`
   .menuoption {
     display: none;
     height: 40px;
+    fill: gray;
   }
   @media (max-width: 500px) {
     & {
@@ -87,7 +88,7 @@ export const InnerLinksContainer = styled.div`
       transition: opacity 0.1s linear
         ${({ activeMenu }) => (activeMenu ? ".5s" : "0s")};
       & > button {
-        margin: 0.5rem 0;
+        margin: 5px 0;
         letter-spacing: 1px;
       }
     }
