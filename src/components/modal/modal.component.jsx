@@ -1,5 +1,5 @@
 import Thumbnail from "../thumbnail/thumbnail.component";
-import "./modal.styes.scss";
+import { BackgroundBlur, ModalContainer } from "./modal.styes.jsx";
 import ShowPhoto from "../show-photo/show-photo.component";
 import { ReactComponent as CloseIcon } from "../../assets/icons/icon-close.svg";
 import { useContext } from "react";
@@ -14,15 +14,15 @@ const ModalComponent = () => {
 
   return (
     <>
-      <div className="background-blur" />
-      <div className="modal-container">
+      <BackgroundBlur />
+      <ModalContainer>
         <CloseIcon className="close-icon" onClick={handleModal} />
         <div>
           <ShowPhoto />
         </div>
 
         <Thumbnail />
-      </div>
+      </ModalContainer>
     </>
   );
 };

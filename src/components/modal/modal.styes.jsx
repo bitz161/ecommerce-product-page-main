@@ -1,4 +1,6 @@
-.background-blur {
+import styled from "styled-components";
+
+export const BackgroundBlur = styled.div`
   backdrop-filter: blur(2px);
   height: 100vh;
   width: 100%;
@@ -8,9 +10,9 @@
   @media (max-width: 500px) {
     display: none;
   }
-}
+`;
 
-.modal-container {
+export const ModalContainer = styled.div`
   position: absolute;
   width: 50%;
   height: 100%;
@@ -57,4 +59,4 @@
       }
     }
   }
-}
+`;

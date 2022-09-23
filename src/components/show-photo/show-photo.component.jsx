@@ -7,8 +7,10 @@ import { useContext } from "react";
 import { PhotosContext } from "../../context/photos.context";
 import { ReactComponent as PreviousIcon } from "../../assets/icons/icon-previous.svg";
 import { ReactComponent as NextIcon } from "../../assets/icons/icon-next.svg";
-
+import { ScreenContext } from "../../context/screenSize.content.jsx";
 const ShowPhoto = () => {
+  const { screenSize } = useContext(ScreenContext);
+
   const {
     photosList,
     selectPhoto,
@@ -18,7 +20,7 @@ const ShowPhoto = () => {
   } = useContext(PhotosContext);
 
   const handleModal = () => {
-    if (enableModal === false) {
+    if (enableModal === false && screenSize > 500) {
       setEnableModal(true);
     }
   };

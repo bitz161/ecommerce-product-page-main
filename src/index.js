@@ -5,15 +5,18 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { MenuProvider } from "./context/menu.context";
 import { PhotosProvider } from "./context/photos.context";
+import { ScreenProvider } from "./context/screenSize.content";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <MenuProvider>
-      <PhotosProvider>
-        <App />
-      </PhotosProvider>
-    </MenuProvider>
+    <ScreenProvider>
+      <MenuProvider>
+        <PhotosProvider>
+          <App />
+        </PhotosProvider>
+      </MenuProvider>
+    </ScreenProvider>
   </React.StrictMode>
 );
 
