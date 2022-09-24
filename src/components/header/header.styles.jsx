@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ReactComponent as PageLogo } from "../../assets/icons/logo.svg";
-
+import { ReactComponent as CartLogo } from "../../assets/icons/icon-cart.svg";
 export const HeaderContainer = styled.header`
   width: 100%;
   display: flex;
@@ -15,10 +15,15 @@ export const HeaderContainer = styled.header`
       width: 90%;
       align-items: flex-start;
       padding-top: 20px;
-      height: ${({ activeMenu }) => (activeMenu ? "30rem" : "5rem")};
+      height: ${({ activeMenu }) => (activeMenu ? "15rem" : "5rem")};
       transition: height 1s;
+      border: none;
     }
   }
+`;
+
+export const CartIcon = styled(CartLogo)`
+  fill: "#69707D";
 `;
 
 export const NavlinksContainer = styled.nav`

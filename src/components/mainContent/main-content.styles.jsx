@@ -7,6 +7,13 @@ export const MainContentContainer = styled.main`
   flex-direction: row;
   align-items: stretch;
   height: 100%;
+  justify-content: space-between;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 
   @media (max-width: 500px) {
     width: 100%;
@@ -15,7 +22,7 @@ export const MainContentContainer = styled.main`
 `;
 
 export const PhotoContainer = styled.div`
-  width: 50%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,6 +32,20 @@ export const PhotoContainer = styled.div`
       width: 100%;
       flex-direction: column;
     }
+  }
+  @media (max-width: 500px) {
+    justify-content: flex-start;
+  }
+`;
+
+export const DetailsContainer = styled.div`
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @media (max-width: 900px) {
+    width: 90%;
+    margin: 2rem 0;
   }
   @media (max-width: 500px) {
     justify-content: flex-start;

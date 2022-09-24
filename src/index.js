@@ -6,6 +6,8 @@ import reportWebVitals from "./reportWebVitals";
 import { MenuProvider } from "./context/menu.context";
 import { PhotosProvider } from "./context/photos.context";
 import { ScreenProvider } from "./context/screenSize.content";
+import { ProductProvider } from "./context/product-details.context";
+import { CartProvider } from "./context/cart.context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,7 +15,11 @@ root.render(
     <ScreenProvider>
       <MenuProvider>
         <PhotosProvider>
-          <App />
+          <ProductProvider>
+            <CartProvider>
+              <App />
+            </CartProvider>
+          </ProductProvider>
         </PhotosProvider>
       </MenuProvider>
     </ScreenProvider>

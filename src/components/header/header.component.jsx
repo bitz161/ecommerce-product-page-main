@@ -4,8 +4,9 @@ import {
   PageIcon,
   InnerLinksContainer,
   CartAndProfileContainer,
+  CartIcon,
 } from "./header.styles.jsx";
-import { ReactComponent as CartLogo } from "../../assets/icons/icon-cart.svg";
+
 import { ReactComponent as MenuIcon } from "../../assets/icons/icon-menu.svg";
 import { ReactComponent as CloseIcon } from "../../assets/icons/icon-close.svg";
 import ProfileImg from "../../assets/images/image-avatar.png";
@@ -38,7 +39,7 @@ const HeaderPage = () => {
         </InnerLinksContainer>
       </NavlinksContainer>
       <CartAndProfileContainer>
-        <CartLogo />
+        <CartIcon />
         <img src={ProfileImg} alt="" />
       </CartAndProfileContainer>
     </HeaderContainer>

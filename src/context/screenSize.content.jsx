@@ -9,7 +9,6 @@ export const ScreenProvider = ({ children }) => {
   useEffect(() => {
     const handleResize = () => {
       setScreenSize(window.screen.width);
-      console.log("changes");
     };
     window.addEventListener("resize", handleResize);
     handleResize();

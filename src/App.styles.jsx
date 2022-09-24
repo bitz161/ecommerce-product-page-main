@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const AppContainer = styled.div`
-  height: 100vh;
+  height: max-content;
   width: 100%;
   display: flex;
   flex-direction: column;

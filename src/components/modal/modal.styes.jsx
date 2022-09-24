@@ -49,8 +49,8 @@ export const ModalContainer = styled.div`
 
       @media (max-width: 900px) {
         & {
-          height: 60cqw;
-          width: 60cqw;
+          height: 70cqw;
+          width: 70cqw;
         }
       }
 
