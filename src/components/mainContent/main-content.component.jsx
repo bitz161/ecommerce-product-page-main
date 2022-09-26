@@ -21,7 +21,6 @@ const MainContent = () => {
       </PhotoContainer>
       <DetailsContainer>
         <Details />
-        <AddCart />
       </DetailsContainer>
     </MainContentContainer>
   );

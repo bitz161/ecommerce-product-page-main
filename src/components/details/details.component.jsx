@@ -1,9 +1,12 @@
 import "./details.styles.scss";
 import { useContext } from "react";
 import { ProductContext } from "../../context/product-details.context";
+import AddCart from "../add-cart/add-cart.component";
+import { PhotosContext } from "../../context/photos.context";
 
 const Details = () => {
   const { productData } = useContext(ProductContext);
+  const { thumbnail, selectPhoto } = useContext(PhotosContext);
   const { name, details, discount, prize } = productData.sneaker;
   return (
     <>
@@ -19,6 +22,12 @@ const Details = () => {
         </div>
         <p>${prize.toFixed(2)}</p>
       </section>
+      <AddCart
+        cartProduct={{
+          ...productData.sneaker,
+          imageUrl: thumbnail[selectPhoto],
+        }}
+      />
     </>
   );
 };

@@ -11,6 +11,7 @@ function App() {
     <AppContainer>
       <MainContainer>
         <HeaderPage />
+
         <MainContent />
       </MainContainer>
       {enableModal && <ModalComponent />}

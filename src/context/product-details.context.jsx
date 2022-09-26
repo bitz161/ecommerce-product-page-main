@@ -19,7 +19,6 @@ export const ProductProvider = ({ children }) => {
   const [productData, setProductData] = useState({
     ...products,
   });
-  console.log(productData);
 
   const value = { productData, setProductData };
   return (
