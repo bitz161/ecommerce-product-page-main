@@ -6,8 +6,8 @@ import { ReactComponent as PlusIcon } from "../../assets/icons/icon-plus.svg";
 import { ReactComponent as CartLogo } from "../../assets/icons/icon-cart.svg";
 const AddCart = ({ cartProduct }) => {
   const { AddCartItems } = useContext(CartContext);
-  const handleAddItems = (data, quantity) => {
-    AddCartItems(data, quantity);
+  const handleAddItems = (cartProduct, quantity) => {
+    AddCartItems(cartProduct, quantity);
     setItemQuantity(0);
   };
   const [itemQuantity, setItemQuantity] = useState(0);
@@ -33,7 +33,7 @@ const AddCart = ({ cartProduct }) => {
           <PlusIcon />
         </button>
       </section>
-      <button onClick={() => handleAddItems({ ...cartProduct }, itemQuantity)}>
+      <button onClick={() => handleAddItems(cartProduct, itemQuantity)}>
         <CartLogo /> <span>Add to cart</span>
       </button>
     </div>

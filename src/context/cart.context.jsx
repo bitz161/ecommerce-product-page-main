@@ -1,35 +1,55 @@
 import { createContext, useState } from "react";
 
 export const CartContext = createContext({
-  cartItem: [],
+  cartItems: [],
   itemQuantity: 0,
   AddCartItems: () => {},
   RemoveCartItem: () => {},
 });
 
-export const CartProvider = ({ children }) => {
-  const [cartItem, setCartItem] = useState([]);
+const AddCartItem = (cartItems, productToAdd, quantity) => {
+  const existingCartItem = cartItems.find(
+    (cartItem) => cartItem.id === productToAdd.id
+  );
 
-  const AddCartItems = (data, quantity) => {
-    setCartItem([
-      ...cartItem,
+  if (existingCartItem) {
+    return cartItems.map((cartItem) => {
+      return (
+        cartItem.id === productToAdd.id && {
+          ...cartItem,
+          quantity: cartItem.quantity + quantity,
+          actualPrize: (cartItem.discount / 100) * cartItem.prize,
+          totalPrize: (cartItem.discount / 100) * cartItem.prize * quantity,
+        }
+      );
+    });
+  } else {
+    return [
       {
-        ...data,
+        ...productToAdd,
         quantity: quantity,
-        actualPrize: (data.discount / 100) * data.prize,
-        totalPrize: (data.discount / 100) * data.prize * quantity,
+        actualPrize: (productToAdd.discount / 100) * productToAdd.prize,
+        totalPrize:
+          (productToAdd.discount / 100) * productToAdd.prize * quantity,
       },
-    ]);
+    ];
+  }
+};
+
+export const CartProvider = ({ children }) => {
+  const [cartItems, setCartItems] = useState([]);
+
+  const AddCartItems = (productToAdd, quantity) => {
+    setCartItems(AddCartItem(cartItems, productToAdd, quantity));
   };
 
   const RemoveCartItem = (idx) => {
-    const newItems = cartItem.filter((data, index) => index !== idx);
-    return setCartItem(newItems);
+    setCartItems(cartItems.filter((_, index) => index !== idx));
   };
 
   const value = {
-    cartItem,
-    setCartItem,
+    cartItems,
+    setCartItems,
     AddCartItems,
     RemoveCartItem,
   };

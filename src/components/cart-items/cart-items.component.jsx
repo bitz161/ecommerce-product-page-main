@@ -4,8 +4,7 @@ import { CartContext } from "../../context/cart.context";
 import { ReactComponent as RemoveItem } from "../../assets/icons/icon-delete.svg";
 
 const CartItems = () => {
-  const { cartItem, RemoveCartItem } = useContext(CartContext);
-
+  const { cartItems, RemoveCartItem } = useContext(CartContext);
   const handleRemove = (data) => {
     RemoveCartItem(data);
   };
@@ -16,8 +15,8 @@ const CartItems = () => {
         <p>Cart</p>
       </section>
       <section className="cart-items-container">
-        {cartItem.length > 0 ? (
-          cartItem.map((data, idx) => {
+        {cartItems.length > 0 ? (
+          cartItems.map((data, idx) => {
             const { imageUrl, actualPrize, quantity, name, totalPrize } = data;
             return (
               <div key={idx}>
@@ -39,7 +38,7 @@ const CartItems = () => {
           <span>Your cart is empty</span>
         )}
       </section>
-      {cartItem.length > 0 && (
+      {cartItems.length > 0 && (
         <section>
           <button>Checkout</button>
         </section>
