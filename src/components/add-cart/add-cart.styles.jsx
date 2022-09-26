@@ -34,6 +34,9 @@ export const AddMinusButton = styled.div`
   height: 100%;
   background-color: transparent;
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const AddToCartButton = styled.div`
