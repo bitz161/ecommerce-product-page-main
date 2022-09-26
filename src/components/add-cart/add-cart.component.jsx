@@ -1,4 +1,9 @@
-import "./add-cart.styles.scss";
+import {
+  AddtoCartContainer,
+  AddMinusContainer,
+  AddMinusButton,
+  AddToCartButton,
+} from "./add-cart.styles.jsx";
 import { useContext, useState } from "react";
 import { CartContext } from "../../context/cart.context";
 import { ReactComponent as MinusIcon } from "../../assets/icons/icon-minus.svg";
@@ -23,20 +28,22 @@ const AddCart = ({ cartProduct }) => {
   };
 
   return (
-    <div className="addtocart-container">
-      <section className="addminus-container">
-        <button onClick={handleMinusQuantity}>
+    <AddtoCartContainer>
+      <AddMinusContainer>
+        <AddMinusButton onClick={handleMinusQuantity}>
           <MinusIcon />
-        </button>
+        </AddMinusButton>
         <p>{itemQuantity}</p>
-        <button onClick={handleAddQuantity}>
+        <AddMinusButton onClick={handleAddQuantity}>
           <PlusIcon />
-        </button>
-      </section>
-      <button onClick={() => handleAddItems(cartProduct, itemQuantity)}>
+        </AddMinusButton>
+      </AddMinusContainer>
+      <AddToCartButton
+        onClick={() => handleAddItems(cartProduct, itemQuantity)}
+      >
         <CartLogo /> <span>Add to cart</span>
-      </button>
-    </div>
+      </AddToCartButton>
+    </AddtoCartContainer>
   );
 };
 

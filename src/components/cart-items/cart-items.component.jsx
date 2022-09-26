@@ -1,4 +1,9 @@
-import "./cart-items.styles.scss";
+import {
+  CartContainer,
+  CartFirstSection,
+  CartItemsContainer,
+  LastCartSection,
+} from "./cart-items.styles.jsx";
 import { useContext } from "react";
 import { CartContext } from "../../context/cart.context";
 import { ReactComponent as RemoveItem } from "../../assets/icons/icon-delete.svg";
@@ -10,11 +15,11 @@ const CartItems = () => {
   };
 
   return (
-    <div className="cart-container">
-      <section>
+    <CartContainer>
+      <CartFirstSection>
         <p>Cart</p>
-      </section>
-      <section className="cart-items-container">
+      </CartFirstSection>
+      <CartItemsContainer>
         {cartItems.length > 0 ? (
           cartItems.map((data, idx) => {
             const { imageUrl, actualPrize, quantity, name, totalPrize } = data;
@@ -37,13 +42,13 @@ const CartItems = () => {
         ) : (
           <span>Your cart is empty</span>
         )}
-      </section>
+      </CartItemsContainer>
       {cartItems.length > 0 && (
-        <section>
+        <LastCartSection>
           <button>Checkout</button>
-        </section>
+        </LastCartSection>
       )}
-    </div>
+    </CartContainer>
   );
 };
 

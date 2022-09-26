@@ -1,4 +1,9 @@
-import "./details.styles.scss";
+import {
+  InnerDetailsContainer,
+  PriceContainer,
+  FirstDivPrice,
+  PriceParagraph,
+} from "./details.styles.jsx";
 import { useContext } from "react";
 import { ProductContext } from "../../context/product-details.context";
 import AddCart from "../add-cart/add-cart.component";
@@ -10,18 +15,18 @@ const Details = () => {
   const { name, details, discount, prize } = productData.sneaker;
   return (
     <>
-      <section className="inner-details-container">
+      <InnerDetailsContainer>
         <h1>Sneaker Company</h1>
         <h2>{name}</h2>
         <p>{details}</p>
-      </section>
-      <section className="price-container">
-        <div>
+      </InnerDetailsContainer>
+      <PriceContainer>
+        <FirstDivPrice>
           <h2>${((discount / 100) * prize).toFixed(2)}</h2>
           <p>{discount}%</p>
-        </div>
-        <p>${prize.toFixed(2)}</p>
-      </section>
+        </FirstDivPrice>
+        <PriceParagraph>${prize.toFixed(2)}</PriceParagraph>
+      </PriceContainer>
       <AddCart
         cartProduct={{
           ...productData.sneaker,
